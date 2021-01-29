@@ -23,6 +23,10 @@ a {
 a:hover {
   color: red;
 }
+fieldset {
+  border: none;
+}
+
 .icon::before,
 .icon::after {
   font: normal normal normal 14px/1 FontAwesome;
@@ -49,7 +53,7 @@ a:hover {
   border-right: 2px solid #bbbbbb;
   padding-right: 25px;
 }
-.nav__item,
+.nav__link,
 .breadcrumbs__item {
   display: flex;
   align-items: center;
@@ -58,9 +62,11 @@ a:hover {
 .nav__link {
   color: #ffffff;
 }
-.nav__item::before {
+.nav__link::before {
   content: '\f053';
-  display: inline-block;
+}
+
+.nav__link::before {
   padding-right: 7px;
   font-size: 8px;
 }
@@ -74,19 +80,24 @@ a:hover {
 .breadcrumbs__item:last-child::after {
   display: none;
 }
-.breadcrumbs__item::after {
+.breadcrumbs__item::after,
+.trailer__link::after {
   content: '\f054';
   display: inline-block;
+}
+.breadcrumbs__item::after {
   font-size: 8px;
   padding-left: 25px;
 }
+.trailer__link::after {
+  font-size: 10px;
+  padding-left: 5px;
+}
 .breadcrumbs__link {
   color: #bbbbbb;
+  pointer-events: none;
 }
-.breadcrumbs__link:hover {
-  outline: none;
-  cursor: not-allowed;
-}
+
 .breadcrumbs__active {
   border-bottom: 2px solid red;
   color: white;
@@ -105,6 +116,7 @@ a:hover {
 .movie__description {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   width: 100%;
   padding: 10px;
 }
@@ -119,20 +131,86 @@ a:hover {
   text-align: center;
   text-transform: uppercase;
   font-size: 10px;
-  padding: 10px;
-  /*display: grid;
-    grid-template-columns: repeat(3 , minmax(200px, 1fr) ) ;*/
+  margin: 5px;
+}
+.pg {
+  margin-left: 5px;
+  padding: 1px;
+  border: 1px solid;
 }
 .trailer__link {
   color: #ffffff;
   order: -1;
   margin: 0 auto;
+  margin-top: 30px;
+  font-size: 10px;
+}
+.booking__calendar {
+  display: flex;
+  justify-content: center;
+  padding: 25px 15px;
+  background-color: #1d1e22;
+  font-size: 13px;
+}
+.booking__headline {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.booking__date, .booking__time {
+  display: flex;
+}
+.real__radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.custom__radio {
+  display: flex;
+  flex-direction: column-reverse;
+  border-bottom: 1px solid transparent;
+  padding: 5px;
+}
+.radio__lable {
+  padding: 5px;
 }
 
-@media (max-width: 1235px) {
+.slider__date {
+  display: flex;
+  align-items: center;
+}
+.slider__button {
+  border: none;
+  background: transparent;
+  color: red;
+}
+.real__radio:checked + .custom__radio {
+  border-bottom-color: red;
+  color: red;
+}
+.real__radio:focus + .custom__radio {
+  border-bottom-color: red;
+}
+.month, .format {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #bbbbbb;
+}
+.weekday, .time {
+  font-size: 15px;
+  font-weight: 500;
+}
+@media (max-width: 1255px) {
   .poster {
     position: relative;
     margin: 0 auto;
+  }
+  .booking__calendar {
+    justify-content: space-around;
   }
 }
 @media (max-width: 667px) {
@@ -144,6 +222,9 @@ a:hover {
     border-right: none;
     padding-bottom: 20px;
     padding-left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .breadcrumbs {
     padding-left: 0px;
@@ -151,7 +232,15 @@ a:hover {
   .movie {
     flex-direction: column;
   }
-  .poster {
+  .movie__header {
+    font-size: 40px;
+  }
+  .booking__calendar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slider__date {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 375px) {

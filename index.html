@@ -23,21 +23,24 @@
     <header class="movie-block">
       <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item icon">
-            <a href="#" class="nav__link">Back</a>
+          <li class="nav__item">
+            <a href="#" class="nav__link icon">Back</a>
           </li>
         </ul>
         <ol class="breadcrumbs">
-          <li class="breadcrumbs__item icon">
-            <a href="#" class="breadcrumbs__link breadcrumbs__active"
+          <li class="breadcrumbs__item icon" aria-hidden="true">
+            <a
+              href="#"
+              class="breadcrumbs__link breadcrumbs__active"
+              tabindex="-1"
               >Seating of choice</a
             >
           </li>
-          <li class="breadcrumbs__item icon">
-            <a href="#" class="breadcrumbs__link">Payment</a>
+          <li class="breadcrumbs__item icon" aria-hidden="true">
+            <a href="#" class="breadcrumbs__link" tabindex="-1">Payment</a>
           </li>
-          <li class="breadcrumbs__item icon">
-            <a href="#" class="breadcrumbs__link">Finish</a>
+          <li class="breadcrumbs__item icon" aria-hidden="true">
+            <a href="#" class="breadcrumbs__link" tabindex="-1">Finish</a>
           </li>
         </ol>
       </nav>
@@ -49,20 +52,112 @@
         />
         <section class="movie__description">
           <h2 class="movie__header">Interstellar</h2>
+          <p class="movie__info">Adventure, Drama, Sci-Fi</p>
+          <p class="movie__info">
+            <span>2h 49min</span><span class="pg">12+</span>
+          </p>
 
-          <div class="movie__info">
-            <p class="genre">Adventure, Drama, Sci-Fi</p>
-            <p class="duration">2h 49min</p>
-          </div>
           <a
             href="https://www.imdb.com/video/vi1586278169?playlistId=tt0816692&ref_=tt_ov_vi"
-            class="trailer__link"
+            class="trailer__link icon"
             >Watch trailer</a
           >
         </section>
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <form class="booking">
+        <section class="booking__calendar">
+          <fieldset class="booking__date">
+            <legend class="booking__headline">Date</legend>
+
+            <div class="slider__date">
+              <button class="slider__button slider__button--prev">
+                <i class="fa fa-chevron-left"></i>
+              </button>
+              <label for="tue" class="radio__lable">
+                <input type="radio" name="day" id="tue" class="real__radio" />
+                <span class="custom__radio">
+                  <span class="weekday">Tue</span>
+                  <span class="month">Jan 2</span>
+                </span>
+              </label>
+              <label for="wed" class="radio__lable">
+                <input
+                  type="radio"
+                  name="day"
+                  id="wed"
+                  class="real__radio"
+                  checked
+                />
+                <span class="custom__radio">
+                  <span class="weekday">Wed</span>
+                  <span class="month">Jan 3</span>
+                </span>
+              </label>
+              <label for="thu" class="radio__lable">
+                <input type="radio" name="day" id="thu" class="real__radio" />
+                <span class="custom__radio">
+                  <span class="weekday">Thu</span>
+                  <span class="month">Jan 4</span>
+                </span>
+              </label>
+              <button class="slider__button slider__button--next">
+                <i class="fa fa-chevron-right"></i>
+              </button>
+            </div>
+          </fieldset>
+          <fieldset class="booking__time">
+            <legend class="booking__headline">Available time</legend>
+            <label for="slot1" class="radio__lable">
+              <input
+                type="radio"
+                name="time"
+                id="slot1"
+                class="real__radio"
+                checked
+              />
+              <span class="custom__radio">
+                <span class="time">11:15</span>
+                <span class="format">2D</span>
+              </span>
+            </label>
+            <label for="slot2" class="radio__lable">
+              <input type="radio" name="time" id="slot2" class="real__radio" />
+              <span class="custom__radio">
+                <span class="time">13:40</span>
+                <span class="format">2D</span>
+              </span>
+            </label>
+            <label for="slot3" class="radio__lable">
+              <input type="radio" name="time" id="slot3" class="real__radio" />
+              <span class="custom__radio">
+                <span class="time">16:30</span>
+                <span class="format">2D</span>
+              </span>
+            </label>
+            <label for="slot4" class="radio__lable">
+              <input type="radio" name="time" id="slot4" class="real__radio" />
+              <span class="custom__radio">
+                <span class="time">18:20</span>
+                <span class="format">3D</span>
+              </span>
+            </label>
+            <label for="slot5" class="radio__lable">
+              <input type="radio" name="time" id="slot5" class="real__radio" />
+              <span class="custom__radio">
+                <span class="time">20:10</span>
+                <span class="format">3D</span>
+              </span>
+            </label>
+          </fieldset>
+        </section>
+
+        <section class="booking__seats">
+
+        </section>
+      </form>
+    </main>
   </body>
 </html>
