@@ -311,6 +311,20 @@ fieldset {
 .slider__button:hover {
   cursor: pointer;
 }
+.footer__info {
+  background-color: #1d1e22;
+  margin: 0;
+  padding: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  color: #4d4d4d;
+}
+.ghlink {
+  color: white;
+  padding: 10px;
+}
 @media (max-width: 1255px) {
   .poster {
     position: relative;
