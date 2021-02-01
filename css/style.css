@@ -25,6 +25,8 @@ a:hover {
 }
 fieldset {
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .icon::before,
@@ -118,7 +120,7 @@ fieldset {
   flex-direction: column-reverse;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
 }
 .movie__header {
   font-size: 50px;
@@ -126,12 +128,14 @@ fieldset {
   text-align: center;
   font-family: Arial, sans-serif;
   text-transform: uppercase;
+  pointer-events: none;
 }
 .movie__info {
   text-align: center;
   text-transform: uppercase;
   font-size: 10px;
   margin: 5px;
+  pointer-events: none;
 }
 .pg {
   margin-left: 5px;
@@ -145,7 +149,7 @@ fieldset {
   margin-top: 30px;
   font-size: 10px;
 }
-.booking__calendar {
+.calendar {
   display: flex;
   justify-content: center;
   padding: 25px 15px;
@@ -159,13 +163,17 @@ fieldset {
   margin: 0 auto;
   padding-bottom: 20px;
 }
-.booking__date, .booking__time {
+.booking__date{
+  margin-right: 55px;
+}
+.booking__date,
+.booking__time {
   display: flex;
 }
-.real__radio {
+.main__radio,
+.main__checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
   position: absolute;
 }
@@ -188,21 +196,120 @@ fieldset {
   background: transparent;
   color: red;
 }
-.real__radio:checked + .custom__radio {
+.main__radio:checked + .custom__radio {
   border-bottom-color: red;
   color: red;
 }
-.real__radio:focus + .custom__radio {
+.main__radio:focus + .custom__radio {
   border-bottom-color: red;
 }
-.month, .format {
-  text-transform: uppercase;
+.month,
+.format {
   font-size: 10px;
   color: #bbbbbb;
 }
-.weekday, .time {
+.weekday,
+.time {
   font-size: 15px;
   font-weight: 500;
+}
+.booking {
+  background-color: #18181b;
+}
+.seats {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.info {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  font-size: 12px;
+}
+.seats__option,
+.seats__status {
+  display: flex;
+}
+.seats__option {
+  margin-right: 30px;
+}
+.seats__option {
+  border-right: 1px solid #4d4d4d;
+  padding-right: 20px;
+}
+.option,
+.status {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 30px;
+}
+.screen {
+  width: 50%;
+  height: 30px;
+  margin: 0 auto;
+  border-top: 20px solid #4d4d4d;
+  padding: 20px;
+  border-radius: 60% 60% 150% 150% / 100% 100% 0 0;
+}
+.seats__rows {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.seats__row:last-child .seats__item {
+  width: 80px;
+}
+.seats__row {
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+}
+.seats__row label {
+  margin-right: 70px;
+}
+.seats__row:last-child label {
+  margin-right: 130px;
+}
+.seats__item {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background-color: #18181b;
+  border: 7px solid #4d4d4d;
+  border-radius: 7px;
+  border-bottom: 21px solid #4d4d4d;
+}
+.info .seats__item {
+  width: 22px;
+  height: 13px;
+  border-bottom: 12px solid #4d4d4d;
+  margin-bottom: 20px;
+}
+.seats__item.loveseat {
+  width: 40px;
+}
+.main__checkbox:focus + .seats__item {
+  border-color: #ffffff7a;
+}
+.main__checkbox:checked + .seats__item,
+.seats__item.selected {
+  border-color: red;
+}
+.main__checkbox:disabled + .seats__item,
+.seats__item.taken {
+  background-color: #222222;
+  border-color: #222222;
+}
+.custom__radio:hover,
+.seats__item:hover,
+.slider__button:hover {
+  cursor: pointer;
 }
 @media (max-width: 1255px) {
   .poster {
@@ -211,6 +318,35 @@ fieldset {
   }
   .booking__calendar {
     justify-content: space-around;
+  }
+  .screen {
+    width: 70%;
+  }
+}
+@media (max-width: 991px) {
+  .seats__item {
+    width: 35px;
+    height: 18px;
+  }
+  .seats__row:last-child .seats__item {
+    width: 60px;
+  }
+  .seats__row label {
+    margin-right: 60px;
+  }
+  .seats__row:last-child label {
+    margin-right: 105px;
+  }
+}
+@media (max-width: 800px) {
+  .seats__row label {
+    margin-right: 55px;
+  }
+  .seats__row:last-child label {
+    margin-right: 90px;
+  }
+  .info {
+    justify-content: center;
   }
 }
 @media (max-width: 667px) {
@@ -235,12 +371,59 @@ fieldset {
   .movie__header {
     font-size: 40px;
   }
-  .booking__calendar {
+  .calendar {
     flex-direction: column;
     align-items: center;
   }
+  .booking__date{
+    margin-right: 0;
+  }
   .slider__date {
     margin-bottom: 20px;
+  }
+  .seats__item {
+    width: 25px;
+    height: 13px;
+    border-width: 5px;
+    border-bottom-width: 15px;
+  }
+  .seats__row:last-child .seats__item {
+    width: 40px;
+  }
+  .seats__row label {
+    margin-right: 45px;
+  }
+  .seats__row:last-child label {
+    margin-right: 65px;
+  }
+}
+@media (max-width: 480px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .seats__option {
+    border: none;
+    margin-bottom: 28px;
+    margin-right: 0;
+  }
+  .seats__item {
+    width: 20px;
+    height: 13px;
+    border-width: 4px;
+    border-bottom-width: 10px;
+  }
+  .seats__row:last-child .seats__item {
+    width: 30px;
+  }
+  .seats__row label {
+    margin-right: 35px;
+  }
+  .seats__row:last-child label {
+    margin-right: 50px;
+  }
+  .screen {
+    border-width: 10px;
   }
 }
 @media (max-width: 375px) {
@@ -255,5 +438,21 @@ fieldset {
   }
   .movie__header {
     font-size: 30px;
+  }
+  .seats__item {
+    width: 13px;
+    height: 7px;
+    border-width: 4px;
+    border-bottom-width: 10px;
+    border-radius: 3px;
+  }
+  .seats__row:last-child .seats__item {
+    width: 23px;
+  }
+  .seats__row label {
+    margin-right: 26px;
+  }
+  .seats__row:last-child label {
+    margin-right: 35px;
   }
 }

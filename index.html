@@ -22,24 +22,24 @@
   <body>
     <header class="movie-block">
       <nav class="nav">
-        <ul class="nav__list">
+        <ul class="nav__list" aria-label="Back to home page">
           <li class="nav__item">
             <a href="#" class="nav__link icon">Back</a>
           </li>
         </ul>
-        <ol class="breadcrumbs">
-          <li class="breadcrumbs__item icon" aria-hidden="true">
+        <ol class="breadcrumbs" aria-label="Breadcrumbs">
+          <li class="breadcrumbs__item icon">
             <a
               href="#"
               class="breadcrumbs__link breadcrumbs__active"
-              tabindex="-1"
+              aria-current="page"
               >Seating of choice</a
             >
           </li>
-          <li class="breadcrumbs__item icon" aria-hidden="true">
+          <li class="breadcrumbs__item icon">
             <a href="#" class="breadcrumbs__link" tabindex="-1">Payment</a>
           </li>
-          <li class="breadcrumbs__item icon" aria-hidden="true">
+          <li class="breadcrumbs__item icon">
             <a href="#" class="breadcrumbs__link" tabindex="-1">Finish</a>
           </li>
         </ol>
@@ -51,10 +51,15 @@
           alt="Movie poster"
         />
         <section class="movie__description">
-          <h2 class="movie__header">Interstellar</h2>
-          <p class="movie__info">Adventure, Drama, Sci-Fi</p>
+          <h2 class="movie__header" title="Movie title" tabindex="0">
+            Interstellar
+          </h2>
+          <p class="movie__info" title="Genre of Movie" tabindex="0">
+            Adventure, Drama, Sci-Fi
+          </p>
           <p class="movie__info">
-            <span>2h 49min</span><span class="pg">12+</span>
+            <time datetime="PT2H49M" tabindex="0">2h 49m</time>
+            <span class="pg" title="Movie rating" tabindex="0">12+</span>
           </p>
 
           <a
@@ -68,19 +73,23 @@
 
     <main>
       <form class="booking">
-        <section class="booking__calendar">
+        <section class="calendar">
           <fieldset class="booking__date">
             <legend class="booking__headline">Date</legend>
 
             <div class="slider__date">
-              <button class="slider__button slider__button--prev">
+              <div
+                class="slider__button slider__button--prev"
+                aria-label="Previous"
+                tabindex="0"
+              >
                 <i class="fa fa-chevron-left"></i>
-              </button>
+              </div>
               <label for="tue" class="radio__lable">
-                <input type="radio" name="day" id="tue" class="real__radio" />
+                <input type="radio" name="day" id="tue" class="main__radio" />
                 <span class="custom__radio">
-                  <span class="weekday">Tue</span>
-                  <span class="month">Jan 2</span>
+                  <span class="weekday" aria-label="Tuesday">Tue</span>
+                  <time datetime="2021-02-02" class="month">Feb 2</time>
                 </span>
               </label>
               <label for="wed" class="radio__lable">
@@ -88,24 +97,28 @@
                   type="radio"
                   name="day"
                   id="wed"
-                  class="real__radio"
+                  class="main__radio"
                   checked
                 />
                 <span class="custom__radio">
-                  <span class="weekday">Wed</span>
-                  <span class="month">Jan 3</span>
+                  <span class="weekday" aria-label="Wednesday">Wed</span>
+                  <time datetime="2021-02-03" class="month">Feb 3</time>
                 </span>
               </label>
               <label for="thu" class="radio__lable">
-                <input type="radio" name="day" id="thu" class="real__radio" />
+                <input type="radio" name="day" id="thu" class="main__radio" />
                 <span class="custom__radio">
-                  <span class="weekday">Thu</span>
-                  <span class="month">Jan 4</span>
+                  <span class="weekday" aria-label="Thursday">Thu</span>
+                  <time datetime="2021-02-04" class="month">Feb 4</time>
                 </span>
               </label>
-              <button class="slider__button slider__button--next">
+              <div
+                class="slider__button slider__button--next"
+                aria-label="Next"
+                tabindex="0"
+              >
                 <i class="fa fa-chevron-right"></i>
-              </button>
+              </div>
             </div>
           </fieldset>
           <fieldset class="booking__time">
@@ -115,47 +128,485 @@
                 type="radio"
                 name="time"
                 id="slot1"
-                class="real__radio"
+                class="main__radio"
                 checked
               />
               <span class="custom__radio">
-                <span class="time">11:15</span>
+                <time datetime="11:15" class="time">11:15</time>
                 <span class="format">2D</span>
               </span>
             </label>
             <label for="slot2" class="radio__lable">
-              <input type="radio" name="time" id="slot2" class="real__radio" />
+              <input type="radio" name="time" id="slot2" class="main__radio" />
               <span class="custom__radio">
-                <span class="time">13:40</span>
+                <time datetime="13:45" class="time">13:45</time>
                 <span class="format">2D</span>
               </span>
             </label>
             <label for="slot3" class="radio__lable">
-              <input type="radio" name="time" id="slot3" class="real__radio" />
+              <input type="radio" name="time" id="slot3" class="main__radio" />
               <span class="custom__radio">
-                <span class="time">16:30</span>
+                <time datetime="16:30" class="time">16:30</time>
                 <span class="format">2D</span>
               </span>
             </label>
             <label for="slot4" class="radio__lable">
-              <input type="radio" name="time" id="slot4" class="real__radio" />
+              <input type="radio" name="time" id="slot4" class="main__radio" />
               <span class="custom__radio">
-                <span class="time">18:20</span>
+                <time datetime="18:20" class="time">18:20</time>
                 <span class="format">3D</span>
               </span>
             </label>
             <label for="slot5" class="radio__lable">
-              <input type="radio" name="time" id="slot5" class="real__radio" />
+              <input type="radio" name="time" id="slot5" class="main__radio" />
               <span class="custom__radio">
-                <span class="time">20:10</span>
+                <time datetime="20:15" class="time">20:15</time>
                 <span class="format">3D</span>
               </span>
             </label>
           </fieldset>
         </section>
-
-        <section class="booking__seats">
-
+        <section class="info">
+          <div class="seats__option">
+            <div class="option">
+              <span class="seats__item"></span>
+              <span>Regular seat</span>
+            </div>
+            <div class="option">
+              <span class="seats__item loveseat"></span>
+              <span>Love seat</span>
+            </div>
+          </div>
+          <div class="seats__status">
+            <div class="status">
+              <span class="seats__item"></span>
+              <span>Available</span>
+            </div>
+            <div class="status">
+              <span class="seats__item taken"></span>
+              <span>Taken</span>
+            </div>
+            <div class="status">
+              <span class="seats__item selected"></span>
+              <span>Selected</span>
+            </div>
+          </div>
+        </section>
+        <section class="seats">
+          <div class="screen"></div>
+          <fieldset class="booking__seats">
+            <legend class="booking__headline">Select your seats</legend>
+            <ul class="seats__rows">
+              <li id="row1" class="seats__row">
+                <label for="seat11">
+                  <input
+                    type="checkbox"
+                    id="seat11"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row1seat1"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat12">
+                  <input
+                    type="checkbox"
+                    id="seat12"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row1seat2"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat13">
+                  <input
+                    type="checkbox"
+                    id="seat13"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row1seat3"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat14">
+                  <input
+                    type="checkbox"
+                    id="seat14"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row1seat4"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat15">
+                  <input
+                    type="checkbox"
+                    id="seat15"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row1seat5"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+              </li>
+              <li id="row2" class="seats__row">
+                <label for="seat21">
+                  <input
+                    type="checkbox"
+                    id="seat21"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat1"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat22">
+                  <input
+                    type="checkbox"
+                    id="seat22"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat2"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat23">
+                  <input
+                    type="checkbox"
+                    id="seat23"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat3"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat24">
+                  <input
+                    type="checkbox"
+                    id="seat24"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat4"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat25">
+                  <input
+                    type="checkbox"
+                    id="seat25"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat5"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat26">
+                  <input
+                    type="checkbox"
+                    id="seat26"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat6"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat27">
+                  <input
+                    type="checkbox"
+                    id="seat27"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row2seat7"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+              </li>
+              <li id="row3" class="seats__row">
+                <label for="seat31">
+                  <input
+                    type="checkbox"
+                    id="seat31"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat1"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat32">
+                  <input
+                    type="checkbox"
+                    id="seat32"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat2"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat33">
+                  <input
+                    type="checkbox"
+                    id="seat33"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat3"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat34">
+                  <input
+                    type="checkbox"
+                    id="seat34"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat4"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat35">
+                  <input
+                    type="checkbox"
+                    id="seat35"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat5"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat36">
+                  <input
+                    type="checkbox"
+                    id="seat36"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat6"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat37">
+                  <input
+                    type="checkbox"
+                    id="seat37"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat7"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat38">
+                  <input
+                    type="checkbox"
+                    id="seat38"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat8"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat39">
+                  <input
+                    type="checkbox"
+                    id="seat39"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat9"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat310">
+                  <input
+                    type="checkbox"
+                    id="seat310"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row3seat10"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+              </li>
+              <li id="row4" class="seats__row">
+                <label for="seat41">
+                  <input
+                    type="checkbox"
+                    id="seat41"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat1"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat42">
+                  <input
+                    type="checkbox"
+                    id="seat42"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat2"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat43">
+                  <input
+                    type="checkbox"
+                    id="seat43"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat3"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat44">
+                  <input
+                    type="checkbox"
+                    id="seat44"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat4"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat45">
+                  <input
+                    type="checkbox"
+                    id="seat45"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat5"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat46">
+                  <input
+                    type="checkbox"
+                    id="seat46"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat6"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat47">
+                  <input
+                    type="checkbox"
+                    id="seat47"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat7"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat48">
+                  <input
+                    type="checkbox"
+                    id="seat48"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat8"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat49">
+                  <input
+                    type="checkbox"
+                    id="seat49"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat9"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat410">
+                  <input
+                    type="checkbox"
+                    id="seat410"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row4seat10"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+              </li>
+              <li id="row5" class="seats__row">
+                <label for="seat51">
+                  <input
+                    type="checkbox"
+                    id="seat51"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat1"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat52">
+                  <input
+                    type="checkbox"
+                    id="seat52"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat2"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat53">
+                  <input
+                    type="checkbox"
+                    id="seat53"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat3"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat54">
+                  <input
+                    type="checkbox"
+                    id="seat54"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat4"
+                    disabled
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat55">
+                  <input
+                    type="checkbox"
+                    id="seat55"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat5"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat56">
+                  <input
+                    type="checkbox"
+                    id="seat56"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat6"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+                <label for="seat57">
+                  <input
+                    type="checkbox"
+                    id="seat57"
+                    class="main__checkbox"
+                    name="seat"
+                    value="row5seat7"
+                  />
+                  <span class="seats__item"></span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
         </section>
       </form>
     </main>
