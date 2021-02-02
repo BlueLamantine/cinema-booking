@@ -176,7 +176,6 @@ fieldset {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
-  border-radius: 0;
 }
 .custom__radio {
   display: flex;
@@ -238,7 +237,6 @@ fieldset {
   margin-right: 30px;
 }
 .seats__option {
-  border-right: 1px solid #4d4d4d;
   padding-right: 20px;
 }
 .option,
@@ -287,13 +285,14 @@ fieldset {
   border-bottom: 21px solid #4d4d4d;
 }
 .info .seats__item {
+  margin-left: -10px;
   width: 22px;
   height: 13px;
   border-bottom: 12px solid #4d4d4d;
-  margin-bottom: 40px;
 }
 .seats__item.loveseat {
   width: 40px;
+  margin-left: -25px;
 }
 .main__checkbox:focus + .seats__item {
   border-color: #ffffff7a;
@@ -306,6 +305,7 @@ fieldset {
 .seats__item.taken {
   background-color: #222222;
   border-color: #222222;
+  pointer-events: none;
 }
 .custom__radio:hover,
 .seats__row .seats__item:hover,
@@ -418,7 +418,6 @@ fieldset {
     align-items: center;
   }
   .seats__option {
-    border: none;
     margin-bottom: 28px;
     margin-right: 0;
   }
