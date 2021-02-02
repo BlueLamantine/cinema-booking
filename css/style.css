@@ -176,6 +176,7 @@ fieldset {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
+  border-radius: 0;
 }
 .custom__radio {
   display: flex;
@@ -289,7 +290,7 @@ fieldset {
   width: 22px;
   height: 13px;
   border-bottom: 12px solid #4d4d4d;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .seats__item.loveseat {
   width: 40px;
@@ -307,7 +308,7 @@ fieldset {
   border-color: #222222;
 }
 .custom__radio:hover,
-.seats__item:hover,
+.seats__row .seats__item:hover,
 .slider__button:hover {
   cursor: pointer;
 }
