@@ -176,6 +176,7 @@ fieldset {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
+  opacity: 0;
 }
 .custom__radio {
   display: flex;
