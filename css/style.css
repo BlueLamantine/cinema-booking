@@ -163,7 +163,7 @@ fieldset {
   margin: 0 auto;
   padding-bottom: 20px;
 }
-.booking__date{
+.booking__date {
   margin-right: 55px;
 }
 .booking__date,
@@ -177,6 +177,8 @@ fieldset {
   appearance: none;
   position: absolute;
   opacity: 0;
+  width: 0;
+  height: 0;
 }
 .custom__radio {
   display: flex;
@@ -327,6 +329,28 @@ fieldset {
   color: white;
   padding: 10px;
 }
+.order {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.order__submit {
+  padding: 10px 60px;
+  border-radius: 20px;
+  background-color: red;
+  border: 3px solid red;
+  color: white;
+  margin-bottom: 20px;
+}
+.order__submit:hover,
+.order__submit:focus {
+  border: 3px solid red;
+  color: red;
+  background-color: white;
+}
+.order__submit:focus {
+  outline: none;
+}
 @media (max-width: 1255px) {
   .poster {
     position: relative;
@@ -391,7 +415,7 @@ fieldset {
     flex-direction: column;
     align-items: center;
   }
-  .booking__date{
+  .booking__date {
     margin-right: 0;
   }
   .slider__date {
